@@ -1,0 +1,72 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	    xmlns="http://www.przyklad.pl"
+	    xmlns:i="http://www.przyklad.pl/inc"
+	    targetNamespace="http://www.przyklad.pl"
+>
+
+<xsd:import schemaLocation="importowany.xs" namespace="http://www.przyklad.pl/inc"/>
+
+<!-- definition of simple elements -->
+<xsd:element name="headtitle" type="xsd:string"/>
+<xsd:element name="title">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+				</xsd:restriction>
+		</xsd:simpleType>
+</xsd:element>
+<xsd:element name="desc" type="xsd:string"/>
+<xsd:element name="description" type="xsd:string"/>
+
+
+<!-- definition of attributes -->
+<xsd:attribute name="category" type="xsd:string"/>
+<xsd:attribute name="id">
+	<xsd:simpleType>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-z][0-9]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:attribute>
+
+<!-- definition of complex elements -->
+<xsd:element name="projekt">
+  <xsd:complexType>
+    <xsd:all>
+      <xsd:element ref="content"/>
+    </xsd:all>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="content">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element ref="headtitle"/>
+      <xsd:element ref="parts" minOccurs="0" maxOccurs="10000"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="parts">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element ref="part" minOccurs="1" maxOccurs="10000"/>
+    </xsd:sequence>
+    <xsd:attribute ref="category" use="required"/>
+  </xsd:complexType>
+</xsd:element>
+
+<xsd:element name="part">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element ref="title"/>
+      <xsd:choice>
+		  <xsd:element ref="desc"/>
+		  <xsd:element ref="description"/>
+      </xsd:choice>
+		<xsd:element ref="i:price"/>
+    </xsd:sequence>
+    <xsd:attribute ref="id" use="optional"/>
+  </xsd:complexType>
+</xsd:element>
+ 
+</xsd:schema>

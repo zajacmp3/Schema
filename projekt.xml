@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<projekt xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="projekt.xsd"
+       xmlns:i="importowany.xs"
+       >
+    <content>
+        <headtitle>Sklep z czesciami</headtitle>
+        <parts category="mechanical">
+            <part id="a1">
+                <title>Drążek kierowniczy poprzeczny</title>
+                <desc>do Citroën BERLINGO (MF)</desc>
+                <price>43.00 pln</price>
+            </part>
+            <part id="a2">
+                <title>Końcówka drążka kierowniczego poprzecznego</title>
+                <desc>do Citroën BERLINGO (MF)</desc>
+                <price>23.00 pln</price>
+            </part>
+            <part id="a3">
+                <title>Drążek kierowniczy poprzeczny wzmocniony</title>
+                <desc>do Citroën BERLINGO (MF)</desc>
+                <price>101.00 pln</price>
+            </part>
+            <part id="a4">
+                <title>Zestaw naprawczy, końcówka drążka kierowniczego poprzecznego</title>
+                <desc>do Citroën BERLINGO (MF)</desc>
+                <price>43.00 pln</price>
+            </part>
+            <part id="a5">
+                <title>Zestaw naprawczy</title>
+                <desc>do Citroën BERLINGO (MF)</desc>
+                <price>500.00 pln</price>
+            </part>
+        </parts>
+    </content>
+</projekt>
